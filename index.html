@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Things I Knew Before I Started CISSP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #1a2332;
+            background: #fafbfc;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a2332 0%, #2d3e50 100%);
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+
+        .reading-time {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Introduction */
+        .intro {
+            background: #ffffff;
+            border-left: 4px solid #d4a574;
+            padding: 30px;
+            border-radius: 4px;
+            margin-bottom: 50px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .intro h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1a2332;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Lessons Grid */
+        .lessons {
+            display: grid;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .lesson {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .lesson:hover {
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .lesson-number {
+            display: inline-block;
+            background: #d4a574;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .lesson-title {
+            font-size: 1.5rem;
+            color: #1a2332;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .lesson-hook {
+            color: #d4a574;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .lesson-body {
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .lesson-body p {
+            margin-bottom: 12px;
+        }
+
+        .takeaway-box {
+            background: #f0f0f0;
+            border-left: 4px solid #d4a574;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+
+        .takeaway-label {
+            font-weight: 600;
+            color: #1a2332;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .metric-box {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .metric-label {
+            font-weight: 600;
+            color: #1a2332;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .metric-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .metric-option {
+            padding: 8px 12px;
+            background: #ffffff;
+            border: 1px solid #d4a574;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+            color: #1a2332;
+        }
+
+        .metric-option:hover {
+            background: #d4a574;
+            color: #ffffff;
+        }
+
+        .metric-option.selected {
+            background: #d4a574;
+            color: #ffffff;
+        }
+
+        .pitfall-box {
+            background: #fff8f0;
+            border-left: 4px solid #e74c3c;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 3px;
+            font-size: 0.95rem;
+        }
+
+        .pitfall-label {
+            font-weight: 600;
+            color: #c0392b;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Timelines Section */
+        .timelines-section {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .timelines-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #1a2332;
+            text-align: center;
+        }
+
+        .timeline-accordion {
+            display: grid;
+            gap: 15px;
+        }
+
+        .accordion-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: #f5f5f5;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1a2332;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .accordion-header:hover {
+            background: #efefef;
+        }
+
+        .accordion-header.active {
+            background: #d4a574;
+            color: #ffffff;
+        }
+
+        .accordion-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-toggle {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #ffffff;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+            padding: 20px;
+        }
+
+        .timeline-details {
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .timeline-details h4 {
+            color: #d4a574;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .timeline-details ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-details li {
+            margin-bottom: 8px;
+        }
+
+        /* Domain Pitfalls Section */
+        .pitfalls-section {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+        }
+
+        .pitfalls-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #1a2332;
+            text-align: center;
+        }
+
+        .pitfalls-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .pitfall-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .pitfall-item h4 {
+            color: #1a2332;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .pitfall-item p {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .pitfall-item strong {
+            color: #d4a574;
+        }
+
+        /* Exam Pitfalls */
+        .exam-pitfalls {
+            background: #fff8f0;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .exam-pitfalls h4 {
+            color: #c0392b;
+            margin-bottom: 12px;
+        }
+
+        .exam-pitfalls p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Metrics Reference */
+        .metrics-table-section {
+            margin-top: 50px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .metrics-table-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: #1a2332;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th {
+            background: #1a2332;
+            color: #ffffff;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1a2332 0%, #2d3e50 100%);
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 6px;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 12px 24px;
+            background: #d4a574;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .share-btn:hover {
+            background: #b88a5a;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+            background: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .lesson, .intro, .timelines-section, .pitfalls-section, .metrics-table-section {
+                padding: 20px;
+            }
+
+            .lesson-title {
+                font-size: 1.2rem;
+            }
+
+            .pitfalls-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-options {
+                flex-direction: column;
+            }
+
+            .metric-option {
+                width: 100%;
+                text-align: center;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+            }
+
+            .share-btn {
+                width: 100%;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+
+        /* Print-friendly */
+        @media print {
+            .hero {
+                page-break-after: avoid;
+            }
+
+            .lesson {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Utility */
+        .text-center {
+            text-align: center;
+        }
+
+        .margin-top {
+            margin-top: 30px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>10 Things I Knew Before I Started CISSP</h1>
+            <p>Realistic. Practical. From people who've been through it.</p>
+            <div class="reading-time">📖 25-35 min read (lessons only: 15 min) | Updated June 2026</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <div class="intro">
+            <h2>Why Read This?</h2>
+            <p>You've decided to get your CISSP. Maybe you're tired of being the person who "just follows security policy" and want to understand the <em>why</em>. Maybe you got passed over for a promotion because you weren't certified. Maybe you're just genuinely curious about security.</p>
+
+            <p>Here's the truth: CISSP isn't a harder version of CompTIA Security+. It's a different animal entirely. And there are things—hard-won lessons—that the study guides won't tell you.</p>
+
+            <p>These 10 lessons came from real CISSP candidates: people who studied for 4 months, or 16 weeks, people who had 10 years of security experience and still felt lost, people who came from non-technical backgrounds and crushed it anyway.</p>
+
+            <p><strong>Read these. Really read them.</strong> Because the gap between understanding CISSP and <em>internalizing</em> it is where most people get stuck.</p>
+        </div>
+
+        <!-- Lessons -->
+        <div class="lessons">
+            <!-- Lesson 1 -->
+            <div class="lesson">
+                <div class="lesson-number">1</div>
+                <h3 class="lesson-title">🎓 Reading Textbooks ≠ Passing CISSP</h3>
+                <p class="lesson-hook">You can read CISSP Study Guide cover-to-cover and still bomb the exam. Because understanding ≠ doing.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "The master has failed more times than the beginner has even tried." — Stephen McCranie
+                </div>
+
+                <div class="lesson-body">
+                    <p>The test doesn't ask: "What does ISC2 say about cryptography?" It asks: "You're a CISO. Your company uses AES-256. A consultant recommends moving to a 512-bit symmetric cipher for 'more security.' What's your response?"</p>
+
+                    <p>That's a judgment call. Not a fact to memorize.</p>
+
+                    <p>Here's the difference: A textbook teaches you <em>what</em> controls exist. The exam tests if you can <em>choose</em> the right control for a messy situation. One CEO says "security is too slow," another says "I don't care if it's slow, we can't afford a breach." You need to know which control solves which problem.</p>
+
+                    <p>Most candidates spend 70% reading, 30% practicing. That's backwards. You retain 10% of what you read, but 70% of what you practice. The balance? About 50/50 learning time and practice time—but within that, FOCUS on practice. Every study session: 30 min new concept, 90 min applying it to questions. That's the rhythm.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    Spend 70% of your study time on practice questions. 30% on reading. When you see a question you get wrong, don't just read the explanation—ask: "Why did they want that answer? What principle underlies it?"
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Explain why one control prevents a specific attack</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: 20+ practice Q's daily with pattern recognition</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Score 75%+ on 50-question practice exam</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    Treating practice exams like reading. You get a score and move on. That's a waste. Review <em>every</em> wrong answer.
+                </div>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="lesson">
+                <div class="lesson-number">2</div>
+                <h3 class="lesson-title">🔤 You Don't Need to Memorize Acronyms</h3>
+                <p class="lesson-hook">CISSP is drowning in acronyms. But memorizing them is a trap.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "The beautiful thing about learning is that no one can take it away from you." — B.B. King
+                </div>
+
+                <div class="lesson-body">
+                    <p>You memorize "NIST SP 800-53 is about security and privacy controls," then the exam asks "Which framework focuses on operational resilience?" and your brain freezes because you didn't understand <em>why</em> NIST exists.</p>
+
+                    <p>The acronyms are just labels. The <em>frameworks</em> are the real knowledge.</p>
+
+                    <p>Example: You learn COBIT is about "IT governance and management." That's a label. But what does that <em>mean</em>? It means COBIT helps companies align IT with business goals. It has processes, metrics, and maturity levels. You need to know <em>that</em>, not "COBIT = governance."</p>
+
+                    <p><strong>Here's the secret:</strong> If you understand the concept, the acronym sticks naturally. But if you memorize the acronym and skip the concept, you'll forget it by test day.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    When studying a framework, ask: "What problem does this solve? Who needs this? What decision does it help you make?" The acronym is just shorthand.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Explain the difference between NIST, ISO, and COBIT by purpose</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Comparing frameworks by what they solve</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Get framework questions right and explain why</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    Getting stuck on "which standard applies." The exam tests the <em>purpose</em> of each framework.
+                </div>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="lesson">
+                <div class="lesson-number">3</div>
+                <h3 class="lesson-title">🌍 Real Security is Messier Than Your Exam</h3>
+                <p class="lesson-hook">Exam questions have clean answers. Real security is gray.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "In any moment of decision, the best thing you can do is the right thing, the next best thing is the wrong thing, and the worst thing you can do is nothing." — Theodore Roosevelt
+                </div>
+
+                <div class="lesson-body">
+                    <p>An exam question says: "A company has a choice between implementing MFA or role-based access control. Limited budget. Which should be prioritized?"</p>
+
+                    <p>Nice. Clean. But in real life, the answer is: "It depends. What's your threat model? How many users? What are they accessing? What's your risk tolerance?"</p>
+
+                    <p>The exam wants one right answer. Your job wants you to balance security, cost, usability, and business risk. That balance is CISSP's real skill.</p>
+
+                    <p>Example: "Should we encrypt all data at rest?" Textbook says yes. Reality: Do you have the performance budget? Who has the keys? Can you recover if the key is lost? Suddenly it's complicated.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    On practice exams, ask: "What's the trade-off here? What judgment is being tested?" Don't just memorize the right answer—understand the principle.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Spot a control and immediately think of a real barrier to implementing it</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Studying case studies and seeing framework connections</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Get questions right because you understand the principle</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    Thinking the exam is testing how much you know. It's testing judgment with incomplete information.
+                </div>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="lesson">
+                <div class="lesson-number">4</div>
+                <h3 class="lesson-title">😰 Imposter Syndrome is Part of the Journey</h3>
+                <p class="lesson-hook">Even after CISSP, you'll sometimes feel like you don't belong.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "Courage is not the absence of fear. It is acting in spite of fear." — Mark Twain
+                </div>
+
+                <div class="lesson-body">
+                    <p>This is true for everyone. The person with 15 years of experience. The person with an MBA and zero technical background. The person who worked in government and is now in finance. Imposter syndrome doesn't disappear with the exam pass.</p>
+
+                    <p>Here's why: CISSP is broad. It covers 8 domains and thousands of hours of material. That gap—between what you've studied and what you've actually <em>done</em>—is where doubt lives.</p>
+
+                    <p>The CISO with 20 years of experience might feel lost reading about cryptography. The cryptographer might feel lost reading about risk management. This is normal. This is actually a sign you're learning something real.</p>
+
+                    <p><strong>The difference between candidates who pass and those who fail isn't confidence. It's willingness to keep going despite doubt.</strong></p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    When you hit a domain that makes you feel lost, that's the signal to dig deeper, not to panic. You're about to learn something that will make you better.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Face an unfamiliar domain and ask how it applies to your company</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Studying for 4+ weeks and still hitting unfamiliar concepts</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Get a lower practice exam score and make a plan instead of quitting</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    The "just one more month of studying" trap. At 70%+ on practice exams, you're ready. Schedule it.
+                </div>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="lesson">
+                <div class="lesson-number">5</div>
+                <h3 class="lesson-title">📝 Practice Exams Will Humble You (And That's Good)</h3>
+                <p class="lesson-hook">Your first full-length practice exam will be rough. And that's the best thing that can happen.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "I have not failed. I've just found 10,000 ways that won't work." — Thomas Edison
+                </div>
+
+                <div class="lesson-body">
+                    <p>You study for 3 weeks. You feel good. You take a practice exam expecting 75%. You get 62%.</p>
+
+                    <p>This moment happens to almost everyone. And it's when studying stops being abstract and starts being real. That's when you discover: "Oh, I didn't actually understand variance analysis. I just memorized a definition."</p>
+
+                    <p>Practice exams are feedback. And feedback, even bad feedback, is gold.</p>
+
+                    <p>Know this: Score variance is normal. You might score 68%, then 75%, then 71%. What matters is the trend over 3-4 exams. Also: Don't use free practice exams as your main prep. Use reputable providers (ISC2 official, Boson, Kaplan). They're pricey ($40-100 per exam) but closest to the real thing.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    Take a full-length practice exam as soon as you've covered 5 domains. You need real feedback, not just self-assessment.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Analyze exactly which domains tripped you up</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Taking one practice exam every 1-2 weeks with trending score</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Three practice exams with average score 70%+</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    Score variance is normal. Don't panic if you score lower one week. Focus on the trend.
+                </div>
+            </div>
+
+            <!-- Learning Curve Visual -->
+            <div style="background: linear-gradient(135deg, #f9f9f9 0%, #fafbfc 100%); border-radius: 6px; padding: 30px; margin: 30px 0; border: 2px solid #d4a574;">
+                <h3 style="text-align: center; color: #1a2332; margin-bottom: 20px;">Typical Practice Exam Score Progression</h3>
+                <svg viewBox="0 0 900 350" style="width: 100%; max-width: 900px; margin: 0 auto; display: block;">
+                    <!-- Grid background -->
+                    <defs>
+                        <pattern id="grid" width="80" height="30" patternUnits="userSpaceOnUse">
+                            <path d="M 80 0 L 0 0 0 30" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+                        </pattern>
+                    </defs>
+                    <rect width="900" height="350" fill="url(#grid)"/>
+
+                    <!-- Axes -->
+                    <line x1="60" y1="30" x2="60" y2="280" stroke="#333" stroke-width="2"/>
+                    <line x1="60" y1="280" x2="850" y2="280" stroke="#333" stroke-width="2"/>
+
+                    <!-- Y-axis labels (score %) -->
+                    <text x="40" y="285" font-size="12" fill="#666" text-anchor="end">0%</text>
+                    <text x="40" y="235" font-size="12" fill="#666" text-anchor="end">50%</text>
+                    <text x="40" y="185" font-size="12" fill="#666" text-anchor="end">60%</text>
+                    <text x="40" y="135" font-size="12" fill="#666" text-anchor="end">70%</text>
+                    <text x="40" y="85" font-size="12" fill="#666" text-anchor="end">80%</text>
+                    <text x="40" y="35" font-size="12" fill="#666" text-anchor="end">90%</text>
+
+                    <!-- X-axis labels (exam number) -->
+                    <text x="130" y="305" font-size="12" fill="#666" text-anchor="middle">Exam 1</text>
+                    <text x="280" y="305" font-size="12" fill="#666" text-anchor="middle">Exam 2</text>
+                    <text x="430" y="305" font-size="12" fill="#666" text-anchor="middle">Exam 3</text>
+                    <text x="580" y="305" font-size="12" fill="#666" text-anchor="middle">Exam 4</text>
+                    <text x="730" y="305" font-size="12" fill="#666" text-anchor="middle">Ready</text>
+
+                    <!-- Normal progression line -->
+                    <polyline points="130,195 280,155 430,125 580,90 730,70"
+                              fill="none" stroke="#d4a574" stroke-width="3" stroke-linejoin="round"/>
+
+                    <!-- Data points -->
+                    <circle cx="130" cy="195" r="6" fill="#d4a574"/>
+                    <circle cx="280" cy="155" r="6" fill="#d4a574"/>
+                    <circle cx="430" cy="125" r="6" fill="#d4a574"/>
+                    <circle cx="580" cy="90" r="6" fill="#d4a574"/>
+                    <circle cx="730" cy="70" r="6" fill="#d4a574"/>
+
+                    <!-- Score labels on points -->
+                    <text x="130" y="175" font-size="13" font-weight="600" fill="#d4a574" text-anchor="middle">62%</text>
+                    <text x="280" y="135" font-size="13" font-weight="600" fill="#d4a574" text-anchor="middle">68%</text>
+                    <text x="430" y="105" font-size="13" font-weight="600" fill="#d4a574" text-anchor="middle">72%</text>
+                    <text x="580" y="70" font-size="13" font-weight="600" fill="#d4a574" text-anchor="middle">75%</text>
+                    <text x="730" y="50" font-size="13" font-weight="600" fill="#d4a574" text-anchor="middle">78%+</text>
+
+                    <!-- Variance annotation (dashed lines showing normal variance) -->
+                    <line x1="280" y1="135" x2="280" y2="175" stroke="#d4a574" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+                    <text x="295" y="160" font-size="9" fill="#666">±variance</text>
+                    <text x="295" y="173" font-size="9" fill="#666">is normal</text>
+
+                    <!-- 70% passing threshold line -->
+                    <line x1="60" y1="135" x2="850" y2="135" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,5" opacity="0.6"/>
+                    <text x="870" y="140" font-size="11" fill="#e74c3c" font-weight="600">70% target</text>
+
+                    <!-- Axis labels -->
+                    <text x="15" y="160" font-size="11" fill="#333" text-anchor="middle" transform="rotate(-90 15 160)">Practice Exam Score</text>
+                    <text x="450" y="330" font-size="11" fill="#333" text-anchor="middle">Practice Exam Number</text>
+                </svg>
+                <div style="margin-top: 15px; padding: 15px; background: #ffffff; border-radius: 4px; color: #666; font-size: 0.9rem;">
+                    <p><strong>What you're seeing:</strong> Normal progression shows upward trend but with variance. Exam 2 might be lower than Exam 1 (that's normal). What matters is the 3-4 exam trend.</p>
+                    <p style="margin-top: 10px;"><strong>Your green light:</strong> When you hit 70%+ on your last TWO practice exams consistently, you're ready. You don't need 90%.</p>
+                </div>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="lesson">
+                <div class="lesson-number">6</div>
+                <h3 class="lesson-title">🔍 Your Weaknesses Are Findings to Fix (Not Failures)</h3>
+                <p class="lesson-hook">Every practice exam weakness is a vulnerability scan result. Don't ignore it—remediate it.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "To win a hundred battles is not the height of skill. To subdue the enemy without fighting is the height of skill." — Sun Tzu, Art of War
+                </div>
+
+                <div class="lesson-body">
+                    <p>Here's the shift that changes everything: Stop thinking "I'm bad at this domain." Start thinking: "This is a finding. I need to patch it."</p>
+
+                    <p>You take a practice exam. You score 62%. You see: "45% on Domain 3, 55% on Domain 6, 72% on Domain 1." What do you do? Option: Triage. "Domain 3 is critical. I'll patch it this week."</p>
+
+                    <p>Then follow the remediation playbook: Deep study (textbook + videos) → Active practice (questions + teach someone) → Gain clarity (understand WHY) → Build confidence (retake Domain 3 questions) → Verify (next exam score on Domain 3 is 75%+).</p>
+
+                    <p>This is how security teams work. Find issue → Fix it → Verify → Move on. You're doing the same thing. Triage findings, patch them one-by-one, verify each patch. Not panic, not general studying—systematic remediation.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    Identify your lowest-scoring domain (the finding). Spend 1-2 weeks remediating it. Then scan again—take another practice exam. You'll find NEW weak spots revealed by fixing the first one. This is continuous. Never stops.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Identified lowest domain, patched it, took another exam to verify improvement</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Completed one full cycle (scan → patch → verify), now identifying NEXT weak domain (continuous)</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Completed 2-3 cycles. Patched Domain X, discovered Domain Y correlations, patching Y now. The cycle keeps moving.</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    Trying to fix everything at once. Weaknesses are findings. Remediate one critical finding, verify it's fixed, move to the next. Systematic, not frantic.
+                </div>
+            </div>
+
+            <!-- Weakness to Strength Remediation Framework -->
+            <div style="background: linear-gradient(135deg, #f9f9f9 0%, #fafbfc 100%); border-radius: 6px; padding: 30px; margin: 30px 0; border: 2px solid #d4a574;">
+                <h3 style="text-align: center; color: #1a2332; margin-bottom: 10px;">From Weakness to Strength: Your Continuous Remediation Cycle</h3>
+                <p style="text-align: center; color: #666; font-size: 0.95rem; margin-bottom: 20px;"><em>Like security monitoring: Scan → Patch → Verify → Scan Again (never stops)</em></p>
+                <svg viewBox="0 0 1000 300" style="width: 100%; max-width: 1000px; margin: 0 auto; display: block;">
+                    <!-- Define arrow marker -->
+                    <defs>
+                        <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="#d4a574"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Step 1: Identify Weakness (Red) -->
+                    <rect x="30" y="80" width="120" height="120" fill="#e74c3c" rx="6"/>
+                    <text x="90" y="125" font-size="28" text-anchor="middle">🔍</text>
+                    <text x="90" y="155" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Identify</text>
+                    <text x="90" y="170" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Weakness</text>
+                    <text x="90" y="190" font-size="9" fill="#ffffff" text-anchor="middle">(Practice exam score)</text>
+
+                    <!-- Arrow -->
+                    <path d="M 160 140 L 190 140" stroke="#d4a574" stroke-width="3" marker-end="url(#arrowhead2)"/>
+
+                    <!-- Step 2: Deep Study -->
+                    <rect x="200" y="80" width="120" height="120" fill="#d4a574" rx="6"/>
+                    <text x="260" y="125" font-size="28" text-anchor="middle">📚</text>
+                    <text x="260" y="155" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Deep Study</text>
+                    <text x="260" y="170" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">the Gap</text>
+                    <text x="260" y="190" font-size="9" fill="#ffffff" text-anchor="middle">(Textbook + videos)</text>
+
+                    <!-- Arrow -->
+                    <path d="M 330 140 L 360 140" stroke="#d4a574" stroke-width="3" marker-end="url(#arrowhead2)"/>
+
+                    <!-- Step 3: Active Practice -->
+                    <rect x="370" y="80" width="120" height="120" fill="#d4a574" rx="6"/>
+                    <text x="430" y="125" font-size="28" text-anchor="middle">⚙️</text>
+                    <text x="430" y="155" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Active</text>
+                    <text x="430" y="170" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Practice</text>
+                    <text x="430" y="190" font-size="9" fill="#ffffff" text-anchor="middle">(Questions + teach)</text>
+
+                    <!-- Arrow -->
+                    <path d="M 500 140 L 530 140" stroke="#d4a574" stroke-width="3" marker-end="url(#arrowhead2)"/>
+
+                    <!-- Step 4: Gain Clarity -->
+                    <rect x="540" y="80" width="120" height="120" fill="#d4a574" rx="6"/>
+                    <text x="600" y="125" font-size="28" text-anchor="middle">💡</text>
+                    <text x="600" y="155" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Gain</text>
+                    <text x="600" y="170" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Clarity</text>
+                    <text x="600" y="190" font-size="9" fill="#ffffff" text-anchor="middle">(Understand principle)</text>
+
+                    <!-- Arrow -->
+                    <path d="M 670 140 L 700 140" stroke="#d4a574" stroke-width="3" marker-end="url(#arrowhead2)"/>
+
+                    <!-- Step 5: Build Confidence -->
+                    <rect x="710" y="80" width="120" height="120" fill="#27ae60" rx="6"/>
+                    <text x="770" y="125" font-size="28" text-anchor="middle">🚀</text>
+                    <text x="770" y="155" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Build</text>
+                    <text x="770" y="170" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Confidence</text>
+                    <text x="770" y="190" font-size="9" fill="#ffffff" text-anchor="middle">(Next practice exam ↑)</text>
+
+                    <!-- Step 6: Tackle Any Question (Green, final) -->
+                    <rect x="880" y="80" width="90" height="120" fill="#27ae60" rx="6"/>
+                    <text x="925" y="125" font-size="28" text-anchor="middle">✓</text>
+                    <text x="925" y="155" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">Tackle Any</text>
+                    <text x="925" y="170" font-size="11" font-weight="600" fill="#ffffff" text-anchor="middle">Question</text>
+
+                    <!-- Bottom annotation -->
+                    <text x="500" y="240" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Like a pentest finding → scan → patch → verify → problem solved</text>
+                    <text x="500" y="260" font-size="10" fill="#666" text-anchor="middle">Your weaknesses are security findings waiting to be fixed</text>
+                </svg>
+                <div style="margin-top: 15px; padding: 15px; background: #ffffff; border-radius: 4px; color: #666; font-size: 0.9rem;">
+                    <p><strong>The Continuous Cycle (Not a One-Time Fix):</strong> Every practice exam is a vulnerability scan. You identify findings (weak domains), remediate them (study + practice), verify the patch worked (score improvement). Then you scan again. Never stops.</p>
+
+                    <p style="margin-top: 10px;"><strong>Why Continuous?</strong></p>
+                    <ul style="margin-left: 20px; margin-top: 5px;">
+                        <li>After fixing Domain 1, you might discover Domain 2 gaps you didn't see before (correlations)</li>
+                        <li>Improvement reveals new gaps (like a pentest: patch one vulnerability, find three more)</li>
+                        <li>Each exam cycle shows new patterns in your thinking (meta-learning)</li>
+                        <li>Even after passing, you'll discover new gaps in real work (lifelong learning)</li>
+                    </ul>
+
+                    <p style="margin-top: 10px;"><strong>Your Playbook (Cyclical):</strong></p>
+                    <p style="margin: 5px 0;">🔍 Scan: Practice exam reveals 45% on Domain X</p>
+                    <p style="margin: 5px 0;">📚 Patch: Study deep + active practice for 1-2 weeks</p>
+                    <p style="margin: 5px 0;">✓ Verify: Next exam shows Domain X improved to 72%</p>
+                    <p style="margin: 5px 0;">🔍 Scan Again: Now you notice Domain Y correlates with X—study that next</p>
+                    <p style="margin: 5px 0;">📚 Patch Again: Repeat for all weak areas</p>
+
+                    <p style="margin-top: 10px;"><strong>The Key Insight:</strong> You're not "done" after fixing one weakness. You're entering continuous improvement mode. Just like real security: patch → scan → find new issue → patch → scan. The cycle never ends. And THAT'S what makes you CISSP-ready.</p>
+
+                    <div style="background: rgba(212, 165, 116, 0.2); padding: 15px; border-left: 4px solid #d4a574; margin-top: 15px; border-radius: 4px;">
+                        <p style="margin: 0; font-style: italic; color: #1a2332; font-size: 0.95rem;">"In the confrontation between the stream and the rock, the stream always wins—not through strength, but through persistence." — H. Jackson Brown Jr.</p>
+                        <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #666;"><strong>For CISSP:</strong> You're the stream. Every weakness you patch, every cycle you complete, you're wearing away at the exam's complexity. Persistence beats brilliance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="lesson">
+                <div class="lesson-number">7</div>
+                <h3 class="lesson-title">⏱️ Your Experience Timeline Matters More Than Speed</h3>
+                <p class="lesson-hook">Rushed cramming never works. But sustainable, consistent study does.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "Don't watch the clock; do what it does. Keep going." — Sam Levenson
+                </div>
+
+                <div class="lesson-body">
+                    <p>You'll hear: "I studied for 4 weeks and passed." Great. But that's not the norm. And it's not sustainable.</p>
+
+                    <p>What IS sustainable? 1 hour a day for 16 weeks. Your brain needs time to consolidate knowledge. Cramming 100 hours into 4 weeks is different from spreading it over 16 weeks. The second one sticks.</p>
+
+                    <p>Also: Your experience matters. If you have 10 years of security experience, you need less study time. If you have zero security background but work in IT, you're starting from a better place than someone coming from finance.</p>
+
+                    <p><strong>Pick the path that fits your experience level and lifestyle. Not the one that sounds fastest.</strong></p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    Consistency beats intensity. 1 hour every day beats 7 hours on Saturday. Your brain consolidates knowledge while you sleep.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Maintained study schedule for 4 weeks without missing a day</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Studying consistently for 8+ weeks with improving practice scores</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Completed your timeline, 70%+ on last two practice exams</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    The "just one more month" trap. At 70%+ on full-length exams, you're ready. Schedule it.
+                </div>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="lesson">
+                <div class="lesson-number">8</div>
+                <h3 class="lesson-title">💼 Your Non-Tech Background is an Asset, Not a Liability</h3>
+                <p class="lesson-hook">If you don't have a technical background, that's not a weakness—it's a different strength.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "The things that make us different are the things that make us strong." — Dr. Seuss
+                </div>
+
+                <div class="lesson-body">
+                    <p>CISSP learners come from everywhere: IT, security, law, finance, operations, military, government. Each background teaches different parts of the 8 domains.</p>
+
+                    <p><strong>Finance/Business background:</strong> You understand risk, budgeting, stakeholder management. Your strength: When CISSP tests judgment on balancing security and cost, you already think that way.</p>
+
+                    <p><strong>Law/Compliance background:</strong> You understand regulations, contracts, liability. Your strength: You know <em>why</em> we have controls (legal risk).</p>
+
+                    <p><strong>Operations/Management background:</strong> You understand process, change management, team dynamics. Your strength: You know how security integrates into operations.</p>
+
+                    <p>Here's what matters: Every perspective teaches something. The person with no IT background who gets CISSP isn't less qualified—they're just qualified <em>differently</em>.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    Study your weak domains harder. But don't doubt your strength. Your background taught you to think like a leader, not just a technician.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Identified your background's strength and lean into it</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Making connections between your background and the domains</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Aced a question because your background prepared you for that judgment</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    Comparing yourself to the IT person who "obviously" knows this stuff. They have different gaps than you.
+                </div>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="lesson">
+                <div class="lesson-number">9</div>
+                <h3 class="lesson-title">🎓 You'll Still Be Learning After the Exam</h3>
+                <p class="lesson-hook">CISSP doesn't make you an expert. It makes you a learner who's proven they can learn.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "Education is not the filling of a pail, but the lighting of a fire." — William Butler Yeats
+                </div>
+
+                <div class="lesson-body">
+                    <p>There are CISSP-certified people who don't understand zero-trust architecture. There are CISPs who've never handled a real incident. There are CISPs who've never configured IAM systems.</p>
+
+                    <p>Why? Because CISSP is a checkpoint, not a destination.</p>
+
+                    <p>The exam tests if you know the <em>principles</em> of security. It doesn't test if you can implement them in your company's specific environment. That's the job.</p>
+
+                    <p>You'll pass CISSP. Then you'll get a project using a technology you've never heard of. You'll handle a breach and realize the textbook didn't cover your situation. You'll discover something you thought you knew was wrong. This is normal. This is actually good.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    After the exam, don't stop learning. The exam was a foundation. Your job is the practice.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: After passing, identified one domain for deeper real-world knowledge</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Reading blogs, incident reports, or papers on topics you studied</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Applied a CISSP principle to a real work situation and it helped</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    The "now I'm certified, I'm done" mindset. Security changes fast. Stay relevant by continuous learning.
+                </div>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="lesson">
+                <div class="lesson-number">10</div>
+                <h3 class="lesson-title">🔄 Consistency Over Intensity—Build the Studying Habit</h3>
+                <p class="lesson-hook">You don't pass CISSP because you're a genius. You pass it because you showed up.</p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 12px 15px; border-left: 4px solid #d4a574; margin: 10px 0; border-radius: 4px; font-style: italic; font-size: 0.95rem; color: #1a2332;">
+                    "Success is the product of daily habits—not once-in-a-lifetime transformations." — James Clear
+                </div>
+
+                <div class="lesson-body">
+                    <p>You studied 1 hour every weekday for 16 weeks. That's 80 hours. That's real.</p>
+
+                    <p>Someone else studied 15 hours every weekend for 4 weeks. Same 60 hours. But split across 8 weekends means your brain didn't consolidate. It's like trying to remember a conversation from 6 months ago—details fade.</p>
+
+                    <p>Consistency builds understanding. Intensity builds stress. Here's the magic: 5-10 hours per week, every week.</p>
+
+                    <p>Why? Because studying security is cumulative. If you skip a week, you lose the thread. But if you study 1 hour daily, your brain consolidates overnight. The people who pass are the ones who miss a day, feel bad about it, and get back on it the next day.</p>
+                </div>
+
+                <div class="takeaway-box">
+                    <span class="takeaway-label">🔑 Practical Takeaway</span>
+                    You don't need the perfect study schedule. You need a consistent one. Pick a time, tell people it's reserved, and protect it.
+                </div>
+
+                <div class="metric-box">
+                    <span class="metric-label">✓ Success Metric (pick one)</span>
+                    <div class="metric-options">
+                        <span class="metric-option" data-metric="achiever">Achiever: Picked a study style and maintained it for 2 weeks without missing</span>
+                        <span class="metric-option" data-metric="momentum">Momentum: Been consistent for 8+ weeks, missed maybe 1-2 days and caught up</span>
+                        <span class="metric-option" data-metric="milestone">Milestone: Completed your timeline consistently, exam scheduled for next 2 weeks</span>
+                    </div>
+                </div>
+
+                <div class="pitfall-box">
+                    <span class="pitfall-label">⚠️ Watch Out For</span>
+                    Perfection as the enemy of done. The goal isn't perfect—it's showing up 95% of the time.
+                </div>
+            </div>
+        </div>
+
+        <!-- Study Timeline Comparison Visual -->
+        <div style="background: #ffffff; border-radius: 6px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 50px;">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #1a2332;">Study Timeline Comparison</h2>
+            <svg viewBox="0 0 900 300" style="width: 100%; max-width: 900px; margin: 0 auto; display: block;">
+                <!-- Grid lines -->
+                <line x1="120" y1="30" x2="120" y2="220" stroke="#e0e0e0" stroke-width="1"/>
+                <line x1="120" y1="220" x2="850" y2="220" stroke="#e0e0e0" stroke-width="1"/>
+
+                <!-- Y-axis labels (weeks) -->
+                <text x="100" y="225" font-size="12" fill="#666" text-anchor="end">0 wks</text>
+                <text x="100" y="175" font-size="12" fill="#666" text-anchor="end">4 wks</text>
+                <text x="100" y="125" font-size="12" fill="#666" text-anchor="end">8 wks</text>
+                <text x="100" y="75" font-size="12" fill="#666" text-anchor="end">16 wks</text>
+
+                <!-- X-axis labels -->
+                <text x="240" y="245" font-size="12" fill="#666" text-anchor="middle">4-Week</text>
+                <text x="550" y="245" font-size="12" fill="#666" text-anchor="middle">8-Week</text>
+                <text x="780" y="245" font-size="12" fill="#666" text-anchor="middle">16-Week</text>
+
+                <!-- Bars showing timeline length -->
+                <!-- 4-Week bar -->
+                <rect x="200" y="165" width="80" height="55" fill="#d4a574" rx="4"/>
+                <text x="240" y="200" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">4 wks</text>
+                <text x="240" y="218" font-size="11" fill="#1a2332" text-anchor="middle">15 hrs/wk</text>
+
+                <!-- 8-Week bar (RECOMMENDED) -->
+                <rect x="510" y="85" width="80" height="135" fill="#d4a574" rx="4"/>
+                <rect x="510" y="85" width="80" height="135" fill="none" stroke="#1a2332" stroke-width="3"/>
+                <text x="550" y="155" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">8 wks</text>
+                <text x="550" y="173" font-size="11" fill="#1a2332" text-anchor="middle">10 hrs/wk</text>
+                <text x="550" y="55" font-size="11" fill="#d4a574" text-anchor="middle" font-weight="600">RECOMMENDED</text>
+
+                <!-- 16-Week bar -->
+                <rect x="745" y="-55" width="80" height="275" fill="#d4a574" rx="4"/>
+                <text x="785" y="130" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">16 wks</text>
+                <text x="785" y="148" font-size="11" fill="#1a2332" text-anchor="middle">5-7 hrs/wk</text>
+
+                <!-- Legend -->
+                <text x="120" y="280" font-size="12" fill="#666">Duration (weeks) vs Study Load per Week • Taller bar = longer timeline, lower weekly commitment</text>
+            </svg>
+            <div style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 4px; text-align: center; color: #666; font-size: 0.9rem;">
+                <strong>Key insight:</strong> The 8-week path balances sustainability and speed. Longer paths let knowledge settle; shorter paths risk burnout.
+            </div>
+        </div>
+
+        <!-- Study Timelines -->
+        <div class="timelines-section">
+            <h2>Study Timeline Variants: Pick Your Path</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">All three timelines lead to CISSP. Pick the one that fits your life.</p>
+
+            <div class="timeline-accordion">
+                <!-- Timeline 1: 4-Week -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>⚡ Timeline 1: 4-Week Intensive (15 hrs/week)</span>
+                        <span class="accordion-toggle">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="timeline-details">
+                            <p><strong>Best for:</strong> Already have 5+ years security experience</p>
+
+                            <h4>Week 1: Foundation & Domain Reviews</h4>
+                            <ul>
+                                <li>Mon-Fri: 1 hour review of each domain overview</li>
+                                <li>Sat: 4 hours reviewing weak domains from Domain 1-2</li>
+                                <li>Sun: 3 hours practice questions (50 Q's)</li>
+                                <li><strong>Goal:</strong> Refresh memory, identify gaps</li>
+                            </ul>
+
+                            <h4>Week 2: Domain Deep Dives & Gap Filling</h4>
+                            <ul>
+                                <li>Mon-Fri: Focus on weakest 3 domains (90 min/day deep learning)</li>
+                                <li>Sat: 4 hours practice exam (50 Q's) + review</li>
+                                <li>Sun: 3 hours studying wrong answers</li>
+                                <li><strong>Goal:</strong> Close knowledge gaps</li>
+                            </ul>
+
+                            <h4>Week 3: Practice Exams & Exam Technique</h4>
+                            <ul>
+                                <li>Mon-Fri: 1 hour practice exams + review (10-15 Q's/day)</li>
+                                <li>Sat: Full-length practice exam (150 Q's)</li>
+                                <li>Sun: Review results, adjust strategy</li>
+                                <li><strong>Goal:</strong> Build speed and accuracy</li>
+                            </ul>
+
+                            <h4>Week 4: Final Prep & Exam</h4>
+                            <ul>
+                                <li>Mon-Wed: 1.5-2 hours practice exams daily</li>
+                                <li>Thu: Rest, review notes, light study</li>
+                                <li>Fri-Sat: Exam</li>
+                                <li><strong>Goal:</strong> Exam-ready, sharp</li>
+                            </ul>
+
+                            <p><strong style="color: #d4a574;">⚠️ Risk:</strong> Burnout if you're not disciplined. Energy management is key.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline 2: 8-Week (Recommended) -->
+                <div class="accordion-item">
+                    <div class="accordion-header active" onclick="toggleAccordion(this)">
+                        <span>🎯 Timeline 2: 8-Week Moderate (10 hrs/week) - RECOMMENDED</span>
+                        <span class="accordion-toggle">▼</span>
+                    </div>
+                    <div class="accordion-content active">
+                        <div class="timeline-details">
+                            <p><strong>Best for:</strong> 3-5 years security experience, OR newbie with mentoring</p>
+
+                            <h4>Weeks 1-2: Domain 1 & 2</h4>
+                            <ul>
+                                <li>2 hours every weekday (1 hr learning + 1 hr practice)</li>
+                                <li>2 hours weekend review</li>
+                                <li><strong>Focus:</strong> Security & Risk Management, Asset Security</li>
+                                <li><strong>Goal:</strong> Solid foundation</li>
+                            </ul>
+
+                            <h4>Weeks 3-4: Domain 3 & 4</h4>
+                            <ul>
+                                <li>Same 10 hrs/week pattern</li>
+                                <li>Start mixing practice questions across Domains 1-4</li>
+                                <li><strong>Focus:</strong> Security Engineering, Communication & Network Security</li>
+                                <li><strong>Goal:</strong> Breadth across half the exam</li>
+                            </ul>
+
+                            <h4>Weeks 5-6: Domain 5 & 6</h4>
+                            <ul>
+                                <li>Same pattern</li>
+                                <li>Practice exams now span 6 domains</li>
+                                <li><strong>Focus:</strong> Identity & Access Management, Cryptography</li>
+                                <li><strong>Goal:</strong> Two-thirds coverage</li>
+                            </ul>
+
+                            <h4>Weeks 7-8: Domain 7 & 8 + Final Prep</h4>
+                            <ul>
+                                <li>Week 7: Domain 7-8 learning</li>
+                                <li>Week 8: Full-length practice exams every other day, review</li>
+                                <li><strong>Goal:</strong> Exam-ready</li>
+                            </ul>
+
+                            <p><strong style="color: #d4a574;">✓ Why this works:</strong> Realistic, sustainable, lets knowledge settle, allows job + life to continue.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline 3: 16-Week -->
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🌱 Timeline 3: 16-Week Deep Immersion (5-7 hrs/week)</span>
+                        <span class="accordion-toggle">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="timeline-details">
+                            <p><strong>Best for:</strong> Zero security background, OR full-time job + studying</p>
+
+                            <h4>Weeks 1-2: Domain 1 Deep Dive</h4>
+                            <ul>
+                                <li>1 hour daily, 5-6 days/week</li>
+                                <li>Read textbook, watch videos, take notes</li>
+                                <li><strong>Goal:</strong> Understand principles deeply</li>
+                            </ul>
+
+                            <h4>Weeks 3-4: Domain 2 Deep Dive</h4>
+                            <ul>
+                                <li>Same pattern</li>
+                                <li>Start connecting to Domain 1</li>
+                                <li>Begin practice questions on both</li>
+                            </ul>
+
+                            <h4>Continuing Pattern: One domain every 2 weeks</h4>
+                            <ul>
+                                <li>Weeks 5-6: Domain 3</li>
+                                <li>Weeks 7-8: Domain 4</li>
+                                <li>Weeks 9-10: Domain 5</li>
+                                <li>Weeks 11-12: Domain 6</li>
+                                <li>Weeks 13-14: Domain 7</li>
+                                <li>Weeks 15-16: Domain 8 + review</li>
+                            </ul>
+
+                            <h4>Weeks 15-16: Practice Exams & Review</h4>
+                            <ul>
+                                <li>No new learning</li>
+                                <li>Full-length practice exams 3-4x</li>
+                                <li>Review across all domains</li>
+                            </ul>
+
+                            <p><strong style="color: #d4a574;">✓ Advantage:</strong> Knowledge sticks, job applications while studying, realistic for full-time work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Domain Pitfalls -->
+        <!-- BONUS SECTION: Management Decision-Making Framework -->
+        <div style="background: linear-gradient(135deg, #1a2332 0%, #2d3e50 100%); color: #ffffff; padding: 40px 30px; border-radius: 6px; margin-bottom: 50px;">
+            <h2 style="text-align: center; color: #d4a574; margin-bottom: 30px;">BONUS: How to Read Every CISSP Question Like a Manager</h2>
+
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 20px; line-height: 1.8;">
+                    <strong>CISSP is not a technical fix-it exam.</strong> It's a management decision-making exam. A technical person asks "How do we fix this?" A manager asks "What's the RIGHT decision given constraints?"
+                </p>
+
+                <div style="background: rgba(212, 165, 116, 0.15); padding: 15px; border-left: 4px solid #d4a574; margin: 20px 0; border-radius: 4px;">
+                    <p style="margin: 0; font-style: italic; color: #1a2332;">"All warfare is based on deception." — Sun Tzu, Art of War</p>
+                    <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">CISSP trap: The "best answer" isn't always the most secure. It's the most deceptive—hiding the real business constraint beneath technical language.</p>
+                </div>
+
+                <h3 style="color: #d4a574; margin-top: 30px; margin-bottom: 15px;">The 5-Step Question Analysis Framework</h3>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 4px; border-left: 4px solid #d4a574; margin-bottom: 20px;">
+                    <p style="margin-bottom: 10px;"><strong>Step 1: READ LIKE A LAWYER</strong> — Every word matters. Underline constraints, actors, outcomes.</p>
+                    <p style="margin: 0 0 10px 0; font-size: 0.95rem; color: #f0f0f0;">Healthcare vs manufacturing vs finance = different risk profiles. Budget = constraint. Regulation = driver.</p>
+
+                    <p style="margin-bottom: 10px; margin-top: 15px;"><strong>Step 2: IDENTIFY YOUR ROLE</strong> — CISO? CTO? Auditor? Risk officer? Your role = your lens.</p>
+                    <p style="margin: 0 0 10px 0; font-size: 0.95rem; color: #f0f0f0;">CISO prioritizes risk. CFO prioritizes cost. Auditor prioritizes compliance. Different roles, different answers.</p>
+
+                    <p style="margin-bottom: 10px; margin-top: 15px;"><strong>Step 3: PUT ON THE MANAGEMENT HAT</strong> — Business constraints. Budget? Timeline? Stakeholder risk appetite?</p>
+                    <p style="margin: 0 0 10px 0; font-size: 0.95rem; color: #f0f0f0;">CISSP rewards "most appropriate given constraints," NOT "most secure."</p>
+
+                    <p style="margin-bottom: 10px; margin-top: 15px;"><strong>Step 4: ANALYZE TECH, DECIDE WITH BUSINESS LOGIC</strong> — Understand controls, but judge through risk/business lens.</p>
+                    <p style="margin: 0 0 10px 0; font-size: 0.95rem; color: #f0f0f0;">Control exists? Good. Does it fit budget/timeline/risk tolerance? That's the real question.</p>
+
+                    <p style="margin-bottom: 0; margin-top: 15px;"><strong>Step 5: ELIMINATE WRONG, SELECT MOST APPROPRIATE</strong> — Cross out answers ignoring constraints or stakeholder concerns.</p>
+                    <p style="margin: 0; font-size: 0.95rem; color: #f0f0f0;">Last answer standing = yours.</p>
+                </div>
+
+                <h3 style="color: #d4a574; margin-top: 30px; margin-bottom: 15px;">Example: MFA vs Advanced Logging (Same Tech, Different Decisions)</h3>
+
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 4px; margin-bottom: 20px;">
+                    <p><strong>Q: Budget for ONE control. Which—MFA or advanced logging?</strong></p>
+                    <p style="margin-top: 15px;"><strong>❌ Technical:</strong> "MFA is more secure. Choose MFA."</p>
+                    <p><strong>✅ Management:</strong> "What's the threat model? If insiders are the threat, logging wins. If credential theft is bleeding us, MFA wins. Which risk is BIGGEST? Choose that control."</p>
+                    <p style="margin-top: 10px; font-size: 0.95rem; color: #f0f0f0;"><strong>Key:</strong> CISSP rewards the answer matching the scenario's risk profile + constraints, not the "most perfect" answer.</p>
+                </div>
+
+                <h3 style="color: #d4a574; margin-top: 30px; margin-bottom: 15px;">Question Tricks: Read Every Phrase</h3>
+
+                <div style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 4px;">
+                    <ul style="margin: 0; padding-left: 20px; line-height: 1.9; font-size: 0.95rem;">
+                        <li><strong>"Most importantly"</strong> → Biggest risk? Which FIRST?</li>
+                        <li><strong>"Initially...subsequently"</strong> → Sequence matters.</li>
+                        <li><strong>"Resource-constrained"</strong> → Budget is a hard constraint. Perfect security = wrong.</li>
+                        <li><strong>"Highly regulated industry"</strong> → Compliance drives decisions.</li>
+                        <li><strong>"An auditor discovered..."</strong> → You're remediating, not preventing. Lens changes.</li>
+                        <li><strong>"The board is concerned"</strong> → Stakeholder risk appetite = decision driver.</li>
+                        <li><strong>"To ensure compliance with XYZ framework"</strong> → Framework lens overrides technical preference.</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(212, 165, 116, 0.2); padding: 20px; border-radius: 4px; margin-top: 20px; border-left: 4px solid #d4a574;">
+                    <p style="margin-bottom: 10px;"><strong>🎯 THE GOLDEN RULE:</strong></p>
+                    <p style="margin: 0;"><strong>Technically correct + ignores constraints = WRONG for CISSP</strong></p>
+                    <p style="margin-top: 10px; color: #f0f0f0;">Less perfect + fits constraints + manages risk = RIGHT</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pitfalls-section">
+            <h2>Domain Pitfalls: What Learners Get Wrong</h2>
+            <div class="pitfalls-grid">
+                <div class="pitfall-item">
+                    <h4>Domain 1: Security & Risk Management</h4>
+                    <p><strong>Mistake:</strong> Confusing "risk tolerance" with "risk appetite."</p>
+                    <p><strong>Why it matters:</strong> Appetite is direction, tolerance is boundary.</p>
+                    <p><strong>Fix:</strong> "We'll accept 2% data loss risk (appetite), but can't tolerate variance beyond 0.5% (tolerance)."</p>
+                </div>
+
+                <div class="pitfall-item">
+                    <h4>Domain 2: Asset Security</h4>
+                    <p><strong>Mistake:</strong> Thinking classification is about sensitivity.</p>
+                    <p><strong>Why it matters:</strong> Classification is about VALUE and IMPACT, not just secrecy.</p>
+                    <p><strong>Fix:</strong> Classify based on "What happens if this leaks or gets corrupted?"</p>
+                </div>
+
+                <div class="pitfall-item">
+                    <h4>Domain 3: Security Engineering</h4>
+                    <p><strong>Mistake:</strong> Memorizing algorithms instead of understanding concepts.</p>
+                    <p><strong>Why it matters:</strong> Algorithms change. Principles don't.</p>
+                    <p><strong>Fix:</strong> Learn WHY symmetric vs. asymmetric, not just that "AES is best."</p>
+                </div>
+
+                <div class="pitfall-item">
+                    <h4>Domain 4: Communication & Network Security</h4>
+                    <p><strong>Mistake:</strong> Mixing up Layer 2, 3, 4 controls with Layer 7 controls.</p>
+                    <p><strong>Why it matters:</strong> Different problems need different solutions. A firewall can't prevent SQL injection.</p>
+                    <p><strong>Fix:</strong> Ask "What layer is the threat?" Match threat to layer.</p>
+                </div>
+
+                <div class="pitfall-item">
+                    <h4>Domain 5: Identity & Access Management</h4>
+                    <p><strong>Mistake:</strong> Thinking IAM is just authentication and password policy.</p>
+                    <p><strong>Why it matters:</strong> IAM is the whole lifecycle: provisioning, authentication, authorization, revocation, audit.</p>
+                    <p><strong>Fix:</strong> Can I prove who you are? Can I limit what you access? Can I see what you did?</p>
+                </div>
+
+                <div class="pitfall-item">
+                    <h4>Domain 6: Cryptography</h4>
+                    <p><strong>Mistake:</strong> Confusing encryption (confidentiality) with hashing (integrity).</p>
+                    <p><strong>Why it matters:</strong> Different tools for different jobs.</p>
+                    <p><strong>Fix:</strong> Encryption is reversible. Hashing isn't. That one difference changes everything.</p>
+                </div>
+
+                <div class="pitfall-item">
+                    <h4>Domain 7: Security Assessment & Testing</h4>
+                    <p><strong>Mistake:</strong> Treating vulnerability scanning the same as penetration testing.</p>
+                    <p><strong>Why it matters:</strong> Scanning finds <em>potential</em> issues. Pentest proves <em>actual</em> exploitability.</p>
+                    <p><strong>Fix:</strong> Scanners = automated. Pentest = manual. Different tools, different value.</p>
+                </div>
+
+                <div class="pitfall-item">
+                    <h4>Domain 8: Security Operations</h4>
+                    <p><strong>Mistake:</strong> Thinking incident response is just "detect, respond, recover."</p>
+                    <p><strong>Why it matters:</strong> NIST breaks it down: Prepare, Detect, Respond, Recover, Post-incident.</p>
+                    <p><strong>Fix:</strong> If you don't have a playbook BEFORE the breach, you're improvising. That's a failure.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Pitfalls -->
+        <div style="margin-top: 50px;">
+            <h2 style="font-size: 1.8rem; margin-bottom: 30px; color: #1a2332; text-align: center;">Exam Pitfalls: Common Traps on Test Day</h2>
+
+            <div class="exam-pitfalls">
+                <h4>Pitfall 1: Time Management</h4>
+                <p>150 questions in 3 hours = 1.2 minutes per question. Many get stuck on hard questions early, run out of time, guess on the last 20.</p>
+                <p><strong>Fix:</strong> If you're not sure after 90 seconds, mark it and move on. Return to it later.</p>
+            </div>
+
+            <div class="exam-pitfalls">
+                <h4>Pitfall 2: The "Best Answer" Trap</h4>
+                <p>CISSP loves ambiguous questions. Multiple answers might be partially correct. The question isn't "What's right?" It's "What's the <em>best answer</em> given the constraints?"</p>
+                <p><strong>Fix:</strong> Read carefully. Look for words like "best," "first," "most appropriate," "primarily." These matter.</p>
+            </div>
+
+            <div class="exam-pitfalls">
+                <h4>Pitfall 3: Domain Weight Blindness</h4>
+                <p>Domains aren't weighted equally. Domain 1 is ~15%, Domain 8 is ~10%. Many candidates spend equal time on each, then neglect high-weight domains.</p>
+                <p><strong>Fix:</strong> Know the domain weights (ISC2 publishes these). Spend more time on heavy domains.</p>
+            </div>
+
+            <div class="exam-pitfalls">
+                <h4>Pitfall 4: Concept vs. Tool Confusion</h4>
+                <p>Questions test if you understand <em>why</em> a tool exists, not if you know the tool name. "Which tool is best for..." is weak. "Which approach is best for..." is real.</p>
+                <p><strong>Fix:</strong> When studying tools, ask "What problem does this solve?" Not "What's this tool called?"</p>
+            </div>
+
+            <div class="exam-pitfalls">
+                <h4>Pitfall 5: The "I'll Remember It" Trap</h4>
+                <p>You review questions and skip explanations for answers you got right. Then on the real exam, a similar question worded differently and you blank.</p>
+                <p><strong>Fix:</strong> Read <em>every</em> explanation, even for right answers. The explanation teaches the principle.</p>
+            </div>
+        </div>
+
+        <!-- Metrics Visual -->
+        <div class="metrics-table-section">
+            <h2>Success Metrics Matrix: Pick Your Path</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #666;">Click or hover over any box to see how to measure progress in your style.</p>
+
+            <svg viewBox="0 0 1000 450" style="width: 100%; max-width: 1000px; margin: 0 auto; display: block; background: #fafbfc; border-radius: 4px;">
+                <!-- Grid structure -->
+                <!-- Headers -->
+                <rect x="200" y="40" width="200" height="60" fill="#1a2332" rx="4"/>
+                <text x="300" y="75" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">🎯 Achiever</text>
+
+                <rect x="420" y="40" width="200" height="60" fill="#1a2332" rx="4"/>
+                <text x="520" y="75" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">📈 Momentum</text>
+
+                <rect x="640" y="40" width="200" height="60" fill="#1a2332" rx="4"/>
+                <text x="740" y="75" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">🏁 Milestone</text>
+
+                <!-- Row headers -->
+                <rect x="20" y="120" width="160" height="70" fill="#d4a574" rx="4"/>
+                <text x="100" y="160" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">📚 Learning</text>
+
+                <rect x="20" y="210" width="160" height="70" fill="#d4a574" rx="4"/>
+                <text x="100" y="245" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">✓ Consistency</text>
+
+                <rect x="20" y="300" width="160" height="70" fill="#d4a574" rx="4"/>
+                <text x="100" y="335" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">🎯 Preparation</text>
+
+                <!-- Data cells -->
+                <!-- Learning row -->
+                <rect x="200" y="120" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="300" y="145" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Explain domain</text>
+                <text x="300" y="160" font-size="10" fill="#666" text-anchor="middle">to non-tech</text>
+                <text x="300" y="175" font-size="10" fill="#666" text-anchor="middle">person</text>
+
+                <rect x="420" y="120" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="520" y="145" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Understand why</text>
+                <text x="520" y="160" font-size="10" fill="#666" text-anchor="middle">controls X & Y</text>
+                <text x="520" y="175" font-size="10" fill="#666" text-anchor="middle">work together</text>
+
+                <rect x="640" y="120" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="740" y="145" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Score 80%+</text>
+                <text x="740" y="160" font-size="10" fill="#666" text-anchor="middle">on practice</text>
+                <text x="740" y="175" font-size="10" fill="#666" text-anchor="middle">exam</text>
+
+                <!-- Consistency row -->
+                <rect x="200" y="210" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="300" y="235" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Study 5/7</text>
+                <text x="300" y="250" font-size="10" fill="#666" text-anchor="middle">days this</text>
+                <text x="300" y="265" font-size="10" fill="#666" text-anchor="middle">week</text>
+
+                <rect x="420" y="210" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="520" y="235" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Maintain 10+</text>
+                <text x="520" y="250" font-size="10" fill="#666" text-anchor="middle">hrs/week for</text>
+                <text x="520" y="265" font-size="10" fill="#666" text-anchor="middle">4 weeks</text>
+
+                <rect x="640" y="210" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="740" y="235" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Complete one</text>
+                <text x="740" y="250" font-size="10" fill="#666" text-anchor="middle">full 150-Q</text>
+                <text x="740" y="265" font-size="10" fill="#666" text-anchor="middle">practice exam</text>
+
+                <!-- Preparation row -->
+                <rect x="200" y="300" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="300" y="325" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Read one</text>
+                <text x="300" y="340" font-size="10" fill="#666" text-anchor="middle">domain</text>
+                <text x="300" y="355" font-size="10" fill="#666" text-anchor="middle">summary</text>
+
+                <rect x="420" y="300" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="520" y="325" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Complete 2</text>
+                <text x="520" y="340" font-size="10" fill="#666" text-anchor="middle">domains deep</text>
+                <text x="520" y="355" font-size="10" fill="#666" text-anchor="middle">learning</text>
+
+                <rect x="640" y="300" width="200" height="70" fill="#ffffff" stroke="#d4a574" stroke-width="2" rx="4"/>
+                <text x="740" y="325" font-size="11" fill="#1a2332" text-anchor="middle" font-weight="600">Take 3 full-</text>
+                <text x="740" y="340" font-size="10" fill="#666" text-anchor="middle">length exams,</text>
+                <text x="740" y="355" font-size="10" fill="#666" text-anchor="middle">avg 75%+</text>
+            </svg>
+
+            <div style="margin-top: 20px; padding: 15px; background: #f0f0f0; border-radius: 4px; text-align: center; color: #666; font-size: 0.9rem;">
+                <p><strong>How to use this:</strong> Your "Achiever" metrics hit fast (days). Your "Momentum" metrics show consistency (weeks). Your "Milestone" metrics confirm exam-readiness (end goal).</p>
+                <p style="margin-top: 10px;"><strong>Pick your style:</strong> Fast-win people track Achiever metrics. Habit-builders track Momentum. Exam-focused people track Milestone. All paths lead to CISSP.</p>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>You've Got This</h2>
+            <p>CISSP isn't a test of how much you know. It's a test of whether you've internalized security principles enough to apply them in novel situations.</p>
+            <p>You'll pass not because you're brilliant. You'll pass because you showed up. Consistently. Honestly. With patience for the discomfort of learning.</p>
+            <p>And on the other side, you'll be certified. But more importantly, you'll be prepared. Not just for the exam. For the job.</p>
+
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text=10%20Things%20I%20Knew%20Before%20I%20Started%20CISSP%20-%20Real%20lessons%20from%20candidates%20who%20passed.%20No%20hype,%20just%20honest%20guidance.&url=https://sriramshiv.com/cissp-guide" class="share-btn" target="_blank">Share on Twitter</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://sriramshiv.com/cissp-guide" class="share-btn" target="_blank">Share on LinkedIn</a>
+                <a href="mailto:?subject=Check%20this%20out:%2010%20Things%20I%20Knew%20Before%20I%20Started%20CISSP&body=Real%20guidance%20for%20CISSP%20learners:%20https://sriramshiv.com/cissp-guide" class="share-btn">Share via Email</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p><strong>Ready to start?</strong> Pick your timeline, commit to consistency, and trust the process.</p>
+        <p>CISSP is hard. But you're not alone. And you can do it.</p>
+        <p style="margin-top: 20px; font-size: 0.85rem; color: #999;">Questions? Share your experience or feedback below. This guide is for the CISSP community.</p>
+    </div>
+
+    <script>
+        // Accordion functionality
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const allHeaders = document.querySelectorAll('.accordion-header');
+            const allContents = document.querySelectorAll('.accordion-content');
+
+            // Close all other accordions
+            allHeaders.forEach(h => h.classList.remove('active'));
+            allContents.forEach(c => c.classList.remove('active'));
+
+            // Open clicked accordion
+            header.classList.add('active');
+            content.classList.add('active');
+        }
+
+        // Metric selector functionality
+        document.querySelectorAll('.metric-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const box = this.closest('.metric-box');
+                box.querySelectorAll('.metric-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
